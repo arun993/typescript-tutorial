@@ -44,7 +44,9 @@
    
 4. NOW run this command :
 
-   ```npm run mint-and-register```
+   ```
+   npm run mint-and-register
+   ```
 
    **⚡️If You get a url Done you have registred IP on Story!**
 
