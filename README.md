@@ -4,9 +4,7 @@
 
    First of all Open any Ubuntu Terminal: 
    
-1. Install the dependencies:
-
-    Clone Repo:
+1.  Clone Repo:
     ```
     git clone https://github.com/arun993/typescript-tutorial.git && cd typescript-tutorial
     ```
@@ -15,7 +13,7 @@
     sudo apt update
     sudo apt install -y nodejs npm
     ```
-
+    Install Dependencies
     ```
     npm install
     ```
