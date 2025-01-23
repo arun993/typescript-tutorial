@@ -68,6 +68,6 @@
 
    **Done ! YOU can see a link open it in the browser and enjoy your muscin on IP 🎶**
 
-   Script written by [jacobmtucker](https://x.com/jacobmtucker).
+   Raw Source Code [HERE](https://docs.story.foundation/docs/how-to-register-music-on-story) By  [jacobmtucker](https://x.com/jacobmtucker).
    
-   Don't Forget to Follow [0xGareeb](https://x.com/Arun__993) For more . Thanks !
+   Guide Created by  [0xGareeb](https://x.com/Arun__993) Thanks !
