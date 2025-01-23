@@ -13,7 +13,6 @@
         "register-deriv-com-spg": "npx ts-node ./scripts/registerDerivativeCommercialSpg.ts",
         "dispute-ip": "npx ts-node ./scripts/disputeIp.ts",
         "create-spg-collection": "npx ts-node ./scripts/utils/createSpgNftCollection.ts"
-        "OpenAi-on-IP": "npx ts-node ./scripts/OpenAiOnIP.ts"
     },
     "author": "",
     "license": "ISC",
