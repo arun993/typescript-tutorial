@@ -1,8 +1,8 @@
-# ⚡️Register IP On Story and Resiter Music 🎶 on Story 
+# ⚡️Register IP On Story and Register Music 🎶 on Story 
 
 ### Get Started
 
-   First of all Open any Ubunbtu Terminal: 
+   First of all Open any Ubuntu Terminal: 
    
 1. Install the dependencies:
 
@@ -60,13 +60,13 @@
    ```
    sed -i 's/SONG_ID/Replace_with_Your_Song_ID/g' scripts/registerMusic.ts
    ```
-6. Finnaly Run this command to register your Song on IP :
+6. Finally Run this command to register your Song on IP :
 
    ```
    npm run register-music
    ```
 
-   **Done ! YOU can see a link open it in the browser and enjoy your muscin on IP 🎶**
+   **Done ! YOU can see a link open it in the browser and enjoy your music on IP 🎶**
 
    Raw Source Code [HERE](https://docs.story.foundation/docs/how-to-register-music-on-story) By  [jacobmtucker](https://x.com/jacobmtucker).
    
