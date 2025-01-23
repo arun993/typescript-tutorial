@@ -40,11 +40,12 @@
    ```
    RPC_PROVIDER_URL=https://rpc.odyssey.storyrpc.io
    ```
-
+   Press Ctrl+X , Y Enter to save
+   
 4. NOW run this command :
    `npm run mint-and-register`
 
-   If You get a url Done!
+   **⚡️If You get a url Done you have registred IP on Story!**
 
 ## 🎵🎧 "NOW let's Register Music on Story"
 
