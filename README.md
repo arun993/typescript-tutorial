@@ -74,6 +74,9 @@
 
    **Done ! YOU can see a link open it in the browser and enjoy your music on IP 🎶**
 
+   ![image](https://github.com/user-attachments/assets/0aadf8c3-418e-4cb3-89b2-63b814bd6b47)
+
+
    🔗Raw Source Code [HERE](https://docs.story.foundation/docs/how-to-register-music-on-story) By  [jacobmtucker](https://x.com/jacobmtucker).
    
    🔗Guide Created by  [0xGareeb](https://x.com/Arun__993) DO Follow if you like my guide Thanks !
