@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "mint-and-register": "npx ts-node ./scripts/simpleMintAndRegister.ts",
+        "register-music": "npx ts-node ./scripts/registerMusic.ts",
         "mint-and-register-spg": "npx ts-node ./scripts/simpleMintAndRegisterSpg.ts",
         "register-deriv-non-com": "npx ts-node ./scripts/registerDerivativeNonCommercial.ts",
         "register-deriv-com": "npx ts-node ./scripts/registerDerivativeCommercial.ts",
