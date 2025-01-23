@@ -63,7 +63,7 @@
 6. Finnaly Run this command to register your Song on IP :
 
    ```
-   npm run scripts/registerMusic.ts
+   npm run register-music
    ```
 
    Done ! YOU can see a link open it in the browser and enjoy your muscin on IP 🎶
