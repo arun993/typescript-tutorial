@@ -98,7 +98,7 @@ const nftMetadata = {
         txOptions: { waitForTransaction: true },
     })
     console.log(`Root IPA created at transaction hash ${response.txHash}, IPA ID: ${response.ipId}`)
-    console.log(`View on the explorer: https://explorer.story.foundation/ipa/${response.ipId}`)
+    console.log(`Congrats! Your music registered on IP View it on the explorer: https://explorer.story.foundation/ipa/${response.ipId}`)
 }
 
 main()
