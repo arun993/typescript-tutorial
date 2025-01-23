@@ -28,7 +28,7 @@ const main = async function () {
     const nftMetadata = {
         name: 'NFT representing ownership of IP Asset',
         description: 'This NFT represents ownership of an IP Asset',
-        image: 'https://i.imgur.com/gb59b2S.png',
+        image: 'https://i.imgur.com/nrGR8nf.png',
     }
 
     // 3. Upload your IP and NFT Metadata to IPFS
@@ -57,7 +57,7 @@ const main = async function () {
         txOptions: { waitForTransaction: true },
     })
     console.log(`Root IPA created at transaction hash ${response.txHash}, IPA ID: ${response.ipId}`)
-    console.log(`View on the explorer: https://explorer.story.foundation/ipa/${response.ipId}`)
+    console.log(`Congratulations Your IP has been registered View it on the explorer: https://explorer.story.foundation/ipa/${response.ipId}`)
 }
 
 main()
