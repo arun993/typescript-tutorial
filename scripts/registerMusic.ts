@@ -17,7 +17,7 @@ const ipMetadata: IpMetadata = client.ipAsset.generateIpMetadata({
   media: [
     {
       name: 'Rise Again',
-      url: 'https://cdn1.suno.ai/449b356e-d687-48af-968c-b716a97ef220.mp3',
+      url: 'https://cdn1.suno.ai/SONG_ID.mp3',
       mimeType: 'audio/mpeg',
     },
   ],
@@ -53,7 +53,7 @@ const nftMetadata = {
   media: [
     {
       name: 'Rise Again',
-      url: 'https://cdn1.suno.ai/449b356e-d687-48af-968c-b716a97ef220.mp3',
+      url: 'https://cdn1.suno.ai/SONG_ID.mp3',
       mimeType: 'audio/mpeg',
     },
   ],
