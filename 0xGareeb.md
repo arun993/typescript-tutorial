@@ -66,6 +66,7 @@
    npm run register-music
    ```
 
-   Done ! YOU can see a link open it in the browser and enjoy your muscin on IP 🎶
+   **Done ! YOU can see a link open it in the browser and enjoy your muscin on IP 🎶**
 
+   Scrit [written by [jacobmtucker](https://x.com/jacobmtucker)
    Don't Forget to Follow [0xGareeb](https://x.com/Arun__993) For more . Thanks !
