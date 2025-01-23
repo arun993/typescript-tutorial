@@ -1,4 +1,4 @@
-# Register IP On Story and Resiter Music on Story 
+# ⚡️Register IP On Story and Resiter Music 🎶 on Story 
 
 ### Get Started
 
