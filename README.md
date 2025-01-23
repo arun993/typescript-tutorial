@@ -25,7 +25,7 @@
    
     Now add following credentials:
 
-    Your Wallet private key : burner wallet recommanded (must have some $IP for gas)
+    Your Wallet private key : burner wallet recommanded (must have some $IP for gas) Do this when gwei below 100
     ```
     WALLET_PRIVATE_KEY=YOUR_WALLET_PRIVATE_KEY
     ```
