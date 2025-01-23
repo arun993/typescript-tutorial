@@ -68,4 +68,4 @@
 
    🔗Raw Source Code [HERE](https://docs.story.foundation/docs/how-to-register-music-on-story) By  [jacobmtucker](https://x.com/jacobmtucker).
    
-   🔗Guide Created by  [0xGareeb](https://x.com/Arun__993) Thanks !
+   🔗Guide Created by  [0xGareeb](https://x.com/Arun__993) DO Follow if you like my guide Thanks !
