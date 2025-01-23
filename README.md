@@ -24,6 +24,8 @@
 1.  Open editor : ``` nano.env```
    
     Now add following credentials:
+
+    Your Wallet private key : burner wallet recommanded (must have some $IP for gas)
     ```
     WALLET_PRIVATE_KEY=YOUR_WALLET_PRIVATE_KEY
     ```
