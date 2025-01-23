@@ -50,7 +50,7 @@
 1. Got to [SUNO](https://suno.com/) > Signup
 3. GO to Create Tab > Enter Song Prompt or Upload a song that you wanna register then Create .
 4. Click on copy song link and you got a  URL like - https://suno.com/song/dcd3076f-3aa5-400b-ba5d-87d30f27c311
-   Copy the the SONG_ID in the URL And save  (dcd3076f-3aa5-400b-ba5d-87d30f27c311)
+   Copy the the SONG_ID from the URL And save (Song id like this : dcd3076f-3aa5-400b-ba5d-87d30f27c311)
 
 5. Now go back to terminal and run this command by replacing `Replace_with_Your_Song_ID` with you actual Song ID that 
    you got at step 4.
