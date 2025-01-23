@@ -48,7 +48,9 @@
    npm run mint-and-register
    ```
 
-   **⚡️If You get a url Done you have registred IP on Story!**
+   **⚡️If You get output like this  Done you have registred IP on Story!**
+   ![image](https://github.com/user-attachments/assets/ccae89f9-9575-4943-b389-81d6adc6b4fb)
+
 
 ## 🎵🎧 "NOW let's Register Music on Story"
 
