@@ -17,7 +17,7 @@ async function main() {
 
     const image = await openai.images.generate({
       model: "dall-e-2",
-      prompt: "A cute baby sea otter",
+      prompt: "A white cute cat",
     });
 
     const imageUrl = image.data[0].url;
@@ -48,7 +48,7 @@ async function main() {
       image: imageUrl,
       attributes: [
         { key: "Model", value: "dall-e-2" },
-        { key: "Prompt", value: "A cute baby sea otter" },
+        { key: "Prompt", value: "A white cute cat" },
       ],
     };
 
