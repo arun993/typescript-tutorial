@@ -9,6 +9,10 @@ import { client, account } from "./utils";
 import { createHash } from "crypto";
 import { zeroAddress, Address } from "viem";
 
+// Define the addresses for RoyaltyPolicyLAP and SUSD
+const RoyaltyPolicyLAP: Address = "0x28b4F70ffE5ba7A26aEF979226f77Eb57fb9Fdb6";
+const SUSD: Address = "0xC0F6E387aC0B324Ec18EAcf22EE7271207dCE3d5";
+
 async function main() {
   try {
     // Step 1: Generate the image
