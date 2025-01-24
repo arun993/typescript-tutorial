@@ -3,7 +3,7 @@ import fs from "fs";
 import axios from "axios";
 import sharp from "sharp";
 import FormData from "form-data";
-import { uploadBlobToIPFS } from "./uploadToIpfs";
+import { uploadBlobToIPFS ,  uploadJSONToIPFS } from "./uploadToIpfs";
 import { IpMetadata, LicenseTerms } from "@story-protocol/core-sdk";
 import { client, account } from "./utils";
 import { createHash } from "crypto";
