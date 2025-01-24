@@ -46,8 +46,15 @@ const main = async function () {
     console.log(`New SPG NFT collection created at transaction hash ${newCollection.txHash}`);
     console.log(`NFT contract address: ${newCollection.spgNftContract}`);
 
+    // Ensure the contract address is valid
+    const spgNftContract = newCollection.spgNftContract ?? 'undefined';
+    if (spgNftContract === 'undefined') {
+        console.error('Error: NFT contract address is undefined.');
+        return;
+    }
+
     // Update the .env file with the new NFT contract address
-    updateEnvFile('SPG_NFT_CONTRACT_ADDRESS', newCollection.spgNftContract);
+    updateEnvFile('SPG_NFT_CONTRACT_ADDRESS', spgNftContract);
 };
 
 main();
