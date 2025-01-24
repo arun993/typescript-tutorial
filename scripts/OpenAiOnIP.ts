@@ -3,7 +3,7 @@ dotenv.config();
 
 import OpenAI from 'openai'
 import { IpMetadata } from "@story-protocol/core-sdk";
-import { client, account } from './utils'
+//import { client, account } from './utils'
 import { uploadJSONToIPFS } from "./utils/uploadToIpfs";
 import { createHash } from "crypto";
 import { Address } from "viem";
