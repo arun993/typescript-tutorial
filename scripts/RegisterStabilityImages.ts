@@ -78,7 +78,7 @@ async function main() {
     // Step 7: Create license terms
     const commercialRemixTerms: LicenseTerms = {
       transferable: true,
-      royaltyPolicy: 28b4F70ffE5ba7A26aEF979226f77Eb57fb9Fdb6,
+      royaltyPolicy: RoyaltyPolicyLAP, //0x28b4F70ffE5ba7A26aEF979226f77Eb57fb9Fdb6
       defaultMintingFee: BigInt(10),
       expiration: BigInt(0),
       commercialUse: true,
@@ -92,7 +92,7 @@ async function main() {
       derivativesApproval: false,
       derivativesReciprocal: true,
       derivativeRevCeiling: BigInt(0),
-      currency: "C0F6E387aC0B324Ec18EAcf22EE7271207dCE3d5",
+      currency: SUSD,
       uri: "",
     };
 
