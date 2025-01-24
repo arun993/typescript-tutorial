@@ -31,7 +31,7 @@ const main = async function () {
         : `${envContent.trim()}\nSPG_NFT_CONTRACT_ADDRESS=${contractAddress}`
 
     fs.writeFileSync(envFilePath, finalEnvContent, 'utf8')
-    console.log('Updated .env file with SPG_NFT_CONTRACT_ADDRESS')
+    console.log('Contract address Updated in .env file')
 }
 
 main().catch((error) => {
