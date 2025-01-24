@@ -1,6 +1,7 @@
 import { LicenseTerms, StoryClient, StoryConfig } from '@story-protocol/core-sdk'
 import { http, zeroAddress } from 'viem'
 import { privateKeyToAccount, Address, Account } from 'viem/accounts'
+import { client, account } from './utils'
 import dotenv from 'dotenv'
 dotenv.config()
 
