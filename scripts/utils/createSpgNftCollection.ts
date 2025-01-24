@@ -1,35 +1,6 @@
-import { zeroAddress } from 'viem';
-import { client } from './utils';
-import * as fs from 'fs';
-import * as path from 'path';
-
-const updateEnvFile = (key: string, value: string) => {
-    const envFilePath = path.resolve(__dirname, '.env');
-    let envContent = '';
-
-    // Check if the .env file exists
-    if (fs.existsSync(envFilePath)) {
-        envContent = fs.readFileSync(envFilePath, 'utf-8');
-    }
-
-    // Format key=value
-    const formattedEntry = `${key}=${value}`;
-    const regex = new RegExp(`^${key}=.*`, 'm');
-
-    // Replace if key exists, otherwise append
-    if (regex.test(envContent)) {
-        envContent = envContent.replace(regex, formattedEntry);
-    } else {
-        if (envContent.trim() !== '') {
-            envContent += '\n';
-        }
-        envContent += formattedEntry;
-    }
-
-    // Write the updated content back to .env
-    fs.writeFileSync(envFilePath, envContent, 'utf-8');
-    console.log(`Updated .env with ${formattedEntry}`);
-};
+import { zeroAddress } from 'viem'
+import { client } from './utils'
+import fs from 'fs'
 
 const main = async function () {
     // Create a new SPG NFT collection
@@ -41,20 +12,28 @@ const main = async function () {
         mintFeeRecipient: zeroAddress,
         contractURI: '',
         txOptions: { waitForTransaction: true },
-    });
+    })
 
-    console.log(`New SPG NFT collection created at transaction hash ${newCollection.txHash}`);
-    console.log(`NFT contract address: ${newCollection.spgNftContract}`);
+    const contractAddress = newCollection.spgNftContract
+    console.log(`New SPG NFT collection created at transaction hash ${newCollection.txHash}`)
+    console.log(`NFT contract address: ${contractAddress}`)
 
-    // Ensure the contract address is valid
-    const spgNftContract = newCollection.spgNftContract ?? 'undefined';
-    if (spgNftContract === 'undefined') {
-        console.error('Error: NFT contract address is undefined.');
-        return;
-    }
+    // Append or overwrite the SPG_NFT_CONTRACT_ADDRESS in the .env file
+    const envFilePath = '.env'
+    const envContent = fs.existsSync(envFilePath) ? fs.readFileSync(envFilePath, 'utf8') : ''
+    const updatedEnvContent = envContent.replace(
+        /^(SPG_NFT_CONTRACT_ADDRESS=.*)$/m,
+        `SPG_NFT_CONTRACT_ADDRESS=${contractAddress}`
+    )
 
-    // Update the .env file with the new NFT contract address
-    updateEnvFile('SPG_NFT_CONTRACT_ADDRESS', spgNftContract);
-};
+    const finalEnvContent = updatedEnvContent.includes('SPG_NFT_CONTRACT_ADDRESS')
+        ? updatedEnvContent
+        : `${envContent.trim()}\nSPG_NFT_CONTRACT_ADDRESS=${contractAddress}`
 
-main();
+    fs.writeFileSync(envFilePath, finalEnvContent, 'utf8')
+    console.log('Updated .env file with SPG_NFT_CONTRACT_ADDRESS')
+}
+
+main().catch((error) => {
+    console.error('Error:', error)
+})
