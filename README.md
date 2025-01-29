@@ -21,7 +21,7 @@
 
 ## 📄 "Simple Mint and Register IP on story"
 
-1.  Open editor : ``` nano.env```
+1.  Open editor : ``` nano .env```
    
     Now add following credentials:
 
