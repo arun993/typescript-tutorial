@@ -76,6 +76,14 @@
 
    ![image](https://github.com/user-attachments/assets/0aadf8c3-418e-4cb3-89b2-63b814bd6b47)
 
+## 📄 "Create SPG collection"
+1. Just run this command :
+   ```
+   npm run create-spg-collection
+   ```
+   ![image](https://github.com/user-attachments/assets/4eaec27d-6398-42eb-8787-f366bae00e5d)
+
+All Done !
 
    🔗Raw Source Code [HERE](https://docs.story.foundation/docs/how-to-register-music-on-story) By  [jacobmtucker](https://x.com/jacobmtucker).
    
