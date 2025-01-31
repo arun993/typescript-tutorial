@@ -28,13 +28,11 @@ const main = async function () {
     // 2. Raise a Dispute
     //
     // Docs: https://docs.story.foundation/docs/dispute-module
-    const disputeResponse = await client.dispute.raiseDispute({
-        targetIpId: ipResponse.ipId as Address,
-        // this is "PLAGIARISM" in base32, and is currently the only whitelisted
-        // tag for protocol v1.2
-        targetTag: '0x504c414749415249534d00000000000000000000000000000000000000000000',
-        cid: 'QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR',
-    })
+   const disputeResponse = await client.dispute.raiseDispute({
+    targetIpId: ipResponse.ipId as Address,
+    targetTag: '0x504c414749415249534d00000000000000000000000000000000000000000000',
+    cid: keccak256(toUtf8Bytes('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR')), // ✅ Fix here
+})
     console.log(`Dispute raised at transaction hash ${disputeResponse.txHash}, Dispute ID: ${disputeResponse.disputeId}`)
 }
 
