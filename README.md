@@ -1,5 +1,6 @@
-# 音乐上Story链一键脚本 By @TOK_RICH
-
+# 音乐上Story链一键脚本 By TOKRICH
+- **我还是个大学生，只是站在巨人的肩膀上**
+- **点赞关注不迷路**：https://x.com/TOK_RICH
 感谢 [jacobmtucker](https://x.com/jacobmtucker) 提供代码，感谢 [0xGareeb](https://x.com/Arun__993) 提供指南。
 
 ---
@@ -73,5 +74,3 @@ chmod +x Story.sh
 ## 注意事项
 - **Suno 播放问题**：在线播放可能不稳定，若返回的 NFT 链接无法播放，仍可确认音乐已上链。  
 - **脚本依赖**：确保网络畅通，避免因依赖安装失败导致脚本中断。  
-- **点赞关注不迷路**：推特链接 https://x.com/TOK_RICH
-- **我还是个大学生，只是站在巨人的肩膀上**
