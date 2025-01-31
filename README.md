@@ -1,7 +1,7 @@
 # 音乐上Story链一键脚本 By TOKRICH
-- **我还是个大学生，只是站在巨人的肩膀上**
-- **点赞关注不迷路**：https://x.com/TOK_RICH
-感谢 [jacobmtucker](https://x.com/jacobmtucker) 提供代码，感谢 [0xGareeb](https://x.com/Arun__993) 提供指南。
+- **😳我还是个大学生，只是站在巨人的肩膀上**
+- **👀点赞关注不迷路**：https://x.com/TOK_RICH , 
+感谢💯 [jacobmtucker](https://x.com/jacobmtucker) 提供代码，感谢💯 [0xGareeb](https://x.com/Arun__993) 提供指南。
 
 ---
 
