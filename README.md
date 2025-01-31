@@ -13,7 +13,7 @@
 ## 操作步骤
 
 ### 1. 下载脚本
-从以下任一来源下载脚本：
+安全下载脚本：
 - GitHub    
 
 执行命令：
@@ -47,7 +47,7 @@ chmod +x Story.sh
 2. **创建 API Key**  
    - 左侧导航栏点击 **API Key** → 右上角 **New Key**。
    ![image](https://github.com/user-attachments/assets/19e2124a-97eb-4f47-9dca-c8739d77d14a)
-   - 输入 Key Name → 勾选 **Admin** 权限 → 点击 **Generate API Key**。  
+   - 输入 **Key Name** → 勾选 **Admin** 权限 → 点击 **Generate API Key**。  
    ![image](https://github.com/user-attachments/assets/a1913769-fc77-4cab-901e-e004f128d056)
   
 3. **保存 JWT Key**  
@@ -66,11 +66,12 @@ chmod +x Story.sh
    ![image](https://github.com/user-attachments/assets/2a1232da-7c56-47b1-84c7-4ca759e709a7)
  
 3. **获取音乐 ID**  
-   复制歌曲链接中的 ID（示例：`d8bf2c6b-edd1-4145-813b-1fe993fe38a3`），脚本中需填入此 ID。
+   复制歌曲链接中的 ID（示例：`d8bf2c6b-edd1-4145-813b-1fe988888888`），脚本中需填入此 ID。
 
 ---
 
 ## 注意事项
 - **Suno 播放问题**：在线播放可能不稳定，若返回的 NFT 链接无法播放，仍可确认音乐已上链。  
 - **脚本依赖**：确保网络畅通，避免因依赖安装失败导致脚本中断。  
-- **路径问题**：若图片无法显示，请检查 `media/` 目录下的文件路径。
+- **点赞关注不迷路**：推特链接 https://x.com/TOK_RICH
+- **我还是个大学生，只是站在巨人的肩膀上**
