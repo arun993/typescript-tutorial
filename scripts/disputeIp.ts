@@ -1,6 +1,7 @@
 import { Address, toHex } from 'viem'
 import { mintNFT } from './utils/mintNFT'
 import { NFTContractAddress, account, client } from './utils/utils'
+import { keccak256, toUtf8Bytes } from 'ethers';
 //import { keccak256, toUtf8Bytes } from 'viem';
 
 // BEFORE YOU RUN THIS FUNCTION: Make sure to read the README which contains
