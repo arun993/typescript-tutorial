@@ -4,8 +4,8 @@
 run_command() {
     echo "Running: $1"
     $1
-    echo "Sleeping for 15 seconds..."
-    sleep 15
+    echo "Sleeping for 3 seconds..."
+    sleep 3
 }
 
 # Run commands sequentially
