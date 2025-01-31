@@ -1,18 +1,15 @@
 import { Address, toHex, zeroAddress } from 'viem'
-import { mintNFT } from './utils/mintNFT'
-import { SUSDAddress, NFTContractAddress, RoyaltyPolicyLAP, account, createCommercialRemixTerms, client } from './utils/utils'
+import { SUSDAddress, RoyaltyPolicyLAP, SPGNFTContractAddress, createCommercialRemixTerms, client } from './utils/utils'
 
 // BEFORE YOU RUN THIS FUNCTION: Make sure to read the README which contains
-// instructions for running this "Register Derivative Commercial" example.
+// instructions for running this "Register Derivative Commercial SPG" example.
 
 const main = async function () {
-    // 1. Register an IP Asset
+    // 1. Mint and Register an IP Asset
     //
     // Docs: https://docs.story.foundation/docs/register-an-nft-as-an-ip-asset
-    const parentTokenId = await mintNFT(account.address, 'test-uri')
-    const parentIp = await client.ipAsset.registerIpAndAttachPilTerms({
-        nftContract: NFTContractAddress,
-        tokenId: parentTokenId!,
+    const parentIp = await client.ipAsset.mintAndRegisterIpAssetWithPilTerms({
+        spgNftContract: SPGNFTContractAddress,
         terms: [createCommercialRemixTerms({ commercialRevShare: 50, defaultMintingFee: 0 })],
         // NOTE: The below metadata is not configured properly. It is just to make things simple.
         // See `simpleMintAndRegister.ts` for a proper example.
@@ -25,16 +22,14 @@ const main = async function () {
         txOptions: { waitForTransaction: true },
     })
     console.log(
-        `Root IPA created at transaction hash ${parentIp.txHash}, IPA ID: ${parentIp.ipId}, License Terms IDs: ${parentIp.licenseTermsIds}`
+        `Root IPA created at transaction hash ${parentIp.txHash}, IPA ID: ${parentIp.ipId}, License Terms ID: ${parentIp.licenseTermsIds}`
     )
 
-    // 2. Register another (child) IP Asset
+    // 2. Mint and Register IP asset and make it a derivative of the parent IP Asset
     //
-    // Docs: https://docs.story.foundation/docs/register-an-nft-as-an-ip-asset
-    const childTokenId = await mintNFT(account.address, 'test-uri')
-    const childIp = await client.ipAsset.registerDerivativeIp({
-        nftContract: NFTContractAddress,
-        tokenId: childTokenId!,
+    // Docs: https://docs.story.foundation/docs/register-a-derivative#/mint-nft-register-ip-and-link-to-existing-parent-ip
+    const { txHash, childIpId } = await client.ipAsset.mintAndRegisterIpAndMakeDerivative({
+        spgNftContract: SPGNFTContractAddress,
         derivData: {
             parentIpIds: [parentIp.ipId as Address],
             licenseTermsIds: parentIp.licenseTermsIds as bigint[],
@@ -49,14 +44,14 @@ const main = async function () {
         },
         txOptions: { waitForTransaction: true },
     })
-    console.log(`Derivative IPA created at transaction hash ${childIp.txHash}, IPA ID: ${childIp.ipId}`)
+    console.log(`Derivative IPA created and linked at transaction hash ${txHash}, IPA ID: ${childIpId}}`)
 
     // 3. Pay Royalty
     // NOTE: You have to approve the RoyaltyModule to spend 2 SUSD on your behalf first. See README for instructions.
     //
     // Docs: https://docs.story.foundation/docs/pay-ipa
     const payRoyalty = await client.royalty.payRoyaltyOnBehalf({
-        receiverIpId: childIp.ipId as Address,
+        receiverIpId: childIpId as Address,
         payerIpId: zeroAddress,
         token: SUSDAddress,
         amount: 2,
@@ -66,9 +61,9 @@ const main = async function () {
 
     // 4. Child Claim Revenue
     const childClaimRevenue = await client.royalty.snapshotAndClaimByTokenBatch({
-        royaltyVaultIpId: childIp.ipId as Address,
+        royaltyVaultIpId: childIpId as Address,
         currencyTokens: [SUSDAddress],
-        claimer: childIp.ipId as Address,
+        claimer: childIpId as Address,
         txOptions: { waitForTransaction: true },
     })
     console.log(`Child claimed revenue: ${childClaimRevenue.txHash}`)
@@ -78,15 +73,16 @@ const main = async function () {
         ancestorIpId: parentIp.ipId as Address,
         claimer: parentIp.ipId as Address,
         royaltyClaimDetails: [
-            { childIpId: childIp.ipId as Address, royaltyPolicy: RoyaltyPolicyLAP, currencyToken: SUSDAddress, amount: 1 },
+            {
+                childIpId: childIpId as Address,
+                royaltyPolicy: RoyaltyPolicyLAP,
+                currencyToken: SUSDAddress,
+                amount: 1,
+            },
         ],
         txOptions: { waitForTransaction: true },
     })
-    console.log(`Parent claimed revenue: ${parentClaimRevenue.amountsClaimed} at snapshotId ${parentClaimRevenue.snapshotId}`)
-}
-
-main()
-    console.log(`Claimed revenue: ${claimRevenue.amountsClaimed} at snapshotId ${claimRevenue.snapshotId}`)
+    console.log(`Claimed revenue: ${parentClaimRevenue.amountsClaimed} at snapshotId ${parentClaimRevenue.snapshotId}`)
 }
 
 main()
