@@ -1,7 +1,8 @@
 import { Address, keccak256, hexToBytes } from 'viem';
 import { mintNFT } from './utils/mintNFT';
 import { NFTContractAddress, account, client } from './utils/utils';
-import { CID } from 'multiformats'; // ✅ Correct import
+import * as multiformats from 'multiformats'; // ✅ Use full import
+const { CID } = multiformats; // ✅ Extract CID correctly
 
 const main = async function () {
     // 1. Register an IP Asset
