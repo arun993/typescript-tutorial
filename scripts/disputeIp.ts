@@ -1,4 +1,4 @@
-import { Address, toHex, toBytes } from 'viem'; // Import toBytes
+import { Address, toHex, Hex } from 'viem'; // Import Hex type
 import { mintNFT } from './utils/mintNFT';
 import { NFTContractAddress, account, client } from './utils/utils';
 
@@ -20,10 +20,11 @@ const main = async function () {
     console.log(`Root IPA created at transaction hash ${ipResponse.txHash}, IPA ID: ${ipResponse.ipId}`);
     console.log(`View on the explorer: https://explorer.story.foundation/ipa/${ipResponse.ipId}`);
 
-    // 2. Raise a Dispute with corrected targetTag
+    // 2. Raise a Dispute with properly typed targetTag
     const disputeResponse = await client.dispute.raiseDispute({
         targetIpId: ipResponse.ipId as Address,
-        targetTag: toBytes('0x504c414749415249534d00000000000000000000000000000000000000000000'), // Convert hex string to bytes
+        // Explicitly type the hex string as `Hex` to ensure bytes are parsed correctly
+        targetTag: '0x504c414749415249534d00000000000000000000000000000000000000000000' as Hex,
         cid: 'QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR',
     });
     console.log(`Dispute raised at transaction hash ${disputeResponse.txHash}, Dispute ID: ${disputeResponse.disputeId}`);
