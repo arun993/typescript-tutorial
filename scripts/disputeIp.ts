@@ -32,7 +32,7 @@ const main = async function () {
         targetIpId: ipResponse.ipId as Address,
         // this is "PLAGIARISM" in base32, and is currently the only whitelisted
         // tag for protocol v1.2
-        targetTag: '504c414749415249534d00000000000000000000000000000000000000000000',
+        targetTag: '504c414749415249534d000000000000',
         cid: 'QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR',
     })
     console.log(`Dispute raised at transaction hash ${disputeResponse.txHash}, Dispute ID: ${disputeResponse.disputeId}`)
