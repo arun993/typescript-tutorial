@@ -1,4 +1,4 @@
-import { Address, toHex } from 'viem';
+import { Address, toHex, Hex } from 'viem';
 import { mintNFT } from './utils/mintNFT';
 import { NFTContractAddress, account, client } from './utils/utils';
 
@@ -19,15 +19,11 @@ const main = async function () {
     });
     console.log(`Root IPA created at transaction hash ${ipResponse.txHash}, IPA ID: ${ipResponse.ipId}`);
 
-    // 2. Fix Dispute Call - CORRECTED VERSION
+    // 2. FINAL WORKING VERSION - Use direct hex value
     const disputeResponse = await client.dispute.raiseDispute({
         targetIpId: ipResponse.ipId as Address,
-        // PROPER 32-BYTE ENCODING:
-        targetTag: toHex(
-            // Remove "0x" prefix and use raw bytes
-            '504c414749415249534d00000000000000000000000000000000000000000000',
-            { size: 32 }
-        ),
+        // CORRECT 32-BYTE VALUE (66 characters with 0x prefix)
+        targetTag: '0x504c414749415249534d00000000000000000000000000000000000000000000' as Hex,
         cid: 'QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR'
     });
     console.log(`Dispute raised at tx hash ${disputeResponse.txHash}`);
